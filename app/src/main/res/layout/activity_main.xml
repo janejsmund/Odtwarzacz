@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.janejsmund.odtwarzacz.MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkWeather"
+            android:onClick="checkWeather"
+            android:id="@+id/btnCheckWeather"
+            android:layout_weight="0"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0">
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStart"
+            android:onClick="start"
+            android:drawableStart="@android:drawable/ic_media_play"/>
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnPause"
+            android:onClick="pause"
+            android:drawableStart="@android:drawable/ic_media_pause"/>
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStop"
+            android:onClick="stop"
+            android:drawableStart="@android:drawable/ic_delete"/>
+        <Button
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNext"
+            android:onClick="next"
+            android:drawableStart="@android:drawable/ic_media_next"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_weight="0.1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+</LinearLayout>
