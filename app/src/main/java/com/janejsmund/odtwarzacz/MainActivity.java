@@ -21,7 +21,6 @@ import java.util.TimerTask;
 
 public class MainActivity extends Activity {
 
-    Button btnCheckWeather, btnStart, btnPause, btnStop, btnNext;
     ImageView imageView;
 
     MediaPlayer mediaPlayer;
@@ -38,13 +37,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btnCheckWeather = findViewById(R.id.btnCheckWeather);
-
-        btnStart = findViewById(R.id.btnStart);
-        btnPause = findViewById(R.id.btnPause);
-        btnStop = findViewById(R.id.btnStop);
-        btnNext = findViewById(R.id.btnNext);
 
         imageView = findViewById(R.id.imageView);
         currentSlide = 0;
@@ -87,7 +79,6 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "Brak zainstalowanej przeglądarki.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
-
     }
 
     public void nextImage(View view) {
