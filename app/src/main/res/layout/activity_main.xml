@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.janejsmund.odtwarzacz.MainActivity">
+    tools:context="com.janejsmund.odtwarzacz.MainActivity"
+    android:background="@android:color/background_light">
 
     <View
         android:layout_width="match_parent"
@@ -32,10 +32,13 @@
         android:layout_height="10dp"/>
 
     <ImageView
+        android:contentDescription="@string/cudowne_tapety"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="nextImage"/>
+
 
     <View
         android:layout_width="match_parent"
@@ -46,36 +49,37 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_weight="0">
+        android:layout_weight="0"
+        style="?android:attr/buttonBarStyle">
         <Button
             android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnStart"
             android:onClick="start"
-            android:drawableStart="@android:drawable/ic_media_play"/>
+            android:drawableStart="@android:drawable/ic_media_play"
+            style="?android:attr/buttonBarButtonStyle"/>
         <Button
             android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnPause"
             android:onClick="pause"
-            android:drawableStart="@android:drawable/ic_media_pause"/>
+            android:drawableStart="@android:drawable/ic_media_pause"
+            style="?android:attr/buttonBarButtonStyle"/>
         <Button
             android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnStop"
             android:onClick="stop"
-            android:drawableStart="@android:drawable/ic_delete"/>
+            android:drawableStart="@android:drawable/ic_delete"
+            style="?android:attr/buttonBarButtonStyle"/>
         <Button
             android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnNext"
             android:onClick="next"
-            android:drawableStart="@android:drawable/ic_media_next"/>
+            android:drawableStart="@android:drawable/ic_media_next"
+            style="?android:attr/buttonBarButtonStyle"/>
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
 
     <SeekBar
         android:layout_width="match_parent"
