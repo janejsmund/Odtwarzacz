@@ -2,4 +2,6 @@
     <string name="app_name">Odtwarzacz</string>
     <string name="checkWeather">Sprawdź pogodę</string>
     <string name="cudowne_tapety">Cudowne tapety</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
