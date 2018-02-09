@@ -34,7 +34,6 @@ public class AppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        // Construct the RemoteViews object
         views = new RemoteViews(context.getPackageName(), R.layout.app_widget);
 
         currentSlide = 0;
@@ -45,17 +44,20 @@ public class AppWidget extends AppWidgetProvider {
 
         audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
-        // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
-        checkWeather(context);
+//        checkWeather(context);
+//        nextImage(context);
+//        start(context);
+//        pause(context);
+//        stop(context);
+//        next(context);
 
-
-        // There may be multiple widgets active, so update all of them
+        // Update all widgets
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
@@ -75,15 +77,17 @@ public class AppWidget extends AppWidgetProvider {
         try {
             final String siteUrl = "http://if.pw.edu.pl/~meteo/";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(siteUrl));
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-//            views.setOnClickPendingIntent(R.id.btnCheckWeather, pendingIntent);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            views.setOnClickPendingIntent(R.id.btnCheckWeather, pendingIntent);
+
         } catch (ActivityNotFoundException e) {
             Toast.makeText(context, "Brak zainstalowanej przeglądarki.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
 
-    public void nextImage(View view) {
+    public void nextImage(Context context) {
         if (currentSlide < slides.length-1) {
             views.setImageViewResource(R.id.imageView, slides[currentSlide]);
         }
