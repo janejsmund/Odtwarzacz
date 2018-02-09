@@ -20,7 +20,6 @@ import java.util.TimerTask;
 
 public class AppWidget extends AppWidgetProvider {
 
-    static ImageView imageView;
     static RemoteViews views;
 
     static MediaPlayer mediaPlayer;
@@ -77,7 +76,7 @@ public class AppWidget extends AppWidgetProvider {
             final String siteUrl = "http://if.pw.edu.pl/~meteo/";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(siteUrl));
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-            views.setOnClickPendingIntent(R.id.btnCheckWeather, pendingIntent);
+//            views.setOnClickPendingIntent(R.id.btnCheckWeather, pendingIntent);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(context, "Brak zainstalowanej przeglądarki.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
@@ -86,11 +85,11 @@ public class AppWidget extends AppWidgetProvider {
 
     public void nextImage(View view) {
         if (currentSlide < slides.length-1) {
-            imageView.setImageResource(slides[++currentSlide]);
+            views.setImageViewResource(R.id.imageView, slides[currentSlide]);
         }
         else {
             currentSlide = 0;
-            imageView.setImageResource(slides[currentSlide]);
+            views.setImageViewResource(R.id.imageView, slides[currentSlide]);
         }
     }
 
